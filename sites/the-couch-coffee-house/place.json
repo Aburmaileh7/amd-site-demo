@@ -1,0 +1,245 @@
+{
+  "place_id": "ChIJz1x__cGhHBURuLTLBTXHMjQ",
+  "slug": "the-couch-coffee-house",
+  "theme": "cafe_light",
+  "approved": false,
+  "agency": "Amad Web",
+  "layout": {
+    "hero": "split",
+    "story": "stack"
+  },
+  "accent": {
+    "hex": "#8A5428",
+    "rgb": "138, 84, 40",
+    "hover": "#73451F",
+    "ink": "#FFFFFF"
+  },
+  "name": "The Couch Coffee House",
+  "name_lang": "en",
+  "category_label": "كافيه",
+  "area": "تلاع العلي، عمّان",
+  "address": "شارع وصفي التل، تلاع العلي، عمّان",
+  "phone": {
+    "display": "+962 7 9838 7777",
+    "tel": "+962798387777"
+  },
+  "whatsapp": null,
+  "directions_url": "https://www.google.com/maps/search/?api=1&query=The%20Couch%20Coffee%20House&query_place_id=ChIJz1x__cGhHBURuLTLBTXHMjQ",
+  "map_query": "The Couch Coffee House, Tla'a Al-Ali, Amman, Jordan",
+  "rating": {
+    "value": 4.6,
+    "count": 504,
+    "source": "Google"
+  },
+  "hours": {
+    "rows": [
+      {
+        "days": "السبت – الخميس",
+        "time": "9 ص – 11:30 م"
+      },
+      {
+        "days": "الجمعة",
+        "time": "5 م – 11:30 م"
+      }
+    ],
+    "per_day": null,
+    "source": "Google Maps"
+  },
+  "hero": {
+    "headline": "كنبة، قهوة، وشيء حلو بجانبها",
+    "intro": "كافيه هادئ في تلاع العلي، يقصده الزوار للعمل والدراسة وللقهوة والحلويات، مع طلبات خارجية وتوصيل.",
+    "image": "hero"
+  },
+  "sections": [
+    "story",
+    "menu",
+    "reviews",
+    "proof",
+    "amenities",
+    "visit"
+  ],
+  "story": {
+    "eyebrow": "ثلاثة أسباب يذكرها الزوار",
+    "title": "لماذا The Couch؟",
+    "items": [
+      {
+        "label": "للعمل",
+        "title": "مكان هادئ للعمل والدراسة",
+        "text": "يذكر الزوار في مراجعاتهم أنه مناسب للعمل على اللابتوب والدراسة.",
+        "image": "work"
+      },
+      {
+        "label": "للحلويات",
+        "title": "كعكة الشوكولاتة والكوكيز",
+        "text": "من أكثر الحلويات التي ترد في مراجعات الزوار.",
+        "image": "cake"
+      },
+      {
+        "label": "للمشروبات",
+        "title": "ماتشا وسبانيش لاتيه",
+        "text": "مشروبات ذكرها الزوار بالاسم، الساخنة منها والمثلجة.",
+        "image": "matcha"
+      }
+    ]
+  },
+  "menu": {
+    "kind": "menu",
+    "sample": true,
+    "title": "المنيو",
+    "eyebrow": "قهوة وحلويات",
+    "note": "منيو نموذجي لعرض الشكل فقط. الأصناف والأسعار ليست من المحل، وتُستبدل بالمنيو الحقيقي بعد الموافقة.",
+    "currency": "د.أ",
+    "foot": "للطلبات الخارجية والتوصيل",
+    "categories": [
+      {
+        "id": "coffee",
+        "title": "القهوة",
+        "tagline": "ساخنة",
+        "image": "coffee",
+        "items": [
+          {
+            "name": "سبانيش لاتيه",
+            "desc": "إسبريسو مع حليب مكثف.",
+            "price": 3.25,
+            "mentioned": true
+          },
+          {
+            "name": "كابتشينو",
+            "desc": "",
+            "price": 2.75
+          },
+          {
+            "name": "فلات وايت",
+            "desc": "",
+            "price": 2.95
+          },
+          {
+            "name": "V60",
+            "desc": "قهوة مقطّرة.",
+            "price": 3.5
+          }
+        ]
+      },
+      {
+        "id": "cold",
+        "title": "المثلجات",
+        "tagline": "باردة",
+        "image": "matcha",
+        "items": [
+          {
+            "name": "ماتشا لاتيه مثلج",
+            "desc": "بالفانيليا.",
+            "price": 3.75,
+            "mentioned": true
+          },
+          {
+            "name": "سموذي الزبادي",
+            "desc": "",
+            "price": 3.5,
+            "mentioned": true
+          },
+          {
+            "name": "آيس لاتيه",
+            "desc": "",
+            "price": 3.25
+          }
+        ]
+      },
+      {
+        "id": "sweets",
+        "title": "الحلويات",
+        "tagline": "مع القهوة",
+        "image": "cake",
+        "items": [
+          {
+            "name": "كعكة الشوكولاتة",
+            "desc": "",
+            "price": 3.5,
+            "mentioned": true
+          },
+          {
+            "name": "كوكيز",
+            "desc": "",
+            "price": 1.5,
+            "mentioned": true
+          },
+          {
+            "name": "تشيز كيك",
+            "desc": "",
+            "price": 3.75
+          }
+        ]
+      }
+    ]
+  },
+  "mentions": [
+    "سبانيش لاتيه",
+    "كعكة الشوكولاتة",
+    "كوكيز",
+    "ماتشا لاتيه مثلج",
+    "سموذي الزبادي"
+  ],
+  "reviews": [],
+  "amenities": {
+    "eyebrow": "معلومات تهمك",
+    "title": "الخدمات",
+    "image": null,
+    "items": [
+      {
+        "icon": "coffee",
+        "title": "جلسات داخلية",
+        "text": "مع خدمة على الطاولة."
+      },
+      {
+        "icon": "bag",
+        "title": "طلبات خارجية وتوصيل",
+        "text": ""
+      },
+      {
+        "icon": "calendar",
+        "title": "حجز مسبق",
+        "text": "للمجموعات والمناسبات."
+      },
+      {
+        "icon": "car",
+        "title": "مواقف مجانية",
+        "text": ""
+      },
+      {
+        "icon": "access",
+        "title": "مهيأ للكراسي المتحركة",
+        "text": ""
+      }
+    ]
+  },
+  "visit": {
+    "image": null
+  },
+  "images": {
+    "hero": {
+      "id": "photo-1511081692775-05d0f180a065",
+      "alt": "صورة توضيحية: داخل كافيه بإضاءة معلقة وطاولة",
+      "page": "https://unsplash.com/photos/cafe-interior-with-hanging-bulbs-and-table-VobvKmG-StA"
+    },
+    "work": {
+      "id": "photo-1743389412154-f604c3910818",
+      "alt": "صورة توضيحية: عمل على لابتوب بجانب لاتيه",
+      "page": "https://unsplash.com/photos/woman-works-on-laptop-with-a-latte-nearby-buwxwnHoCh4"
+    },
+    "cake": {
+      "id": "photo-1517427294546-5aa121f68e8a",
+      "alt": "صورة توضيحية: قطعة كعكة شوكولاتة",
+      "page": "https://unsplash.com/photos/sliced-chocolate-cake-beside-fork-on-plate-P_l1bJQpQF0"
+    },
+    "matcha": {
+      "id": "photo-1749280447307-31a68eb38673",
+      "alt": "صورة توضيحية: ماتشا لاتيه مثلج",
+      "page": "https://unsplash.com/photos/iced-matcha-latte-on-table-VKWjhlgFFwc"
+    },
+    "coffee": {
+      "id": "photo-1625021659159-f63f546d74a7",
+      "alt": "صورة توضيحية: كوب قهوة على طاولة خشبية",
+      "page": "https://unsplash.com/photos/white-ceramic-mug-on-brown-wooden-table-S8daAB_nJSg"
+    }
+  }
+}

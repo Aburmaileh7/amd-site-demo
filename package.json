@@ -1,0 +1,28 @@
+{
+  "name": "amd-site-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/validate.mjs && astro build",
+    "validate": "node scripts/validate.mjs",
+    "qa": "node scripts/qa.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/alexandria": "^5.3.0",
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "@fontsource/noto-naskh-arabic": "^5.3.0",
+    "@fontsource/readex-pro": "^5.3.0",
+    "@fontsource/reem-kufi": "^5.3.0",
+    "astro": "^5.18.2",
+    "gsap": "^3.15.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

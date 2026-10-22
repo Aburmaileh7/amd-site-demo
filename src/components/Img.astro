@@ -1,0 +1,13 @@
+---
+// Illustrative Unsplash photo with responsive sizes and the mandatory badge.
+const { img, sizes = '100vw', eager = false, cls = '', pos = '50% 50%' } = Astro.props;
+const base = `https://images.unsplash.com/${img.id}?auto=format&fit=crop&q=75`;
+const widths = [640, 960, 1400, 2000];
+const srcset = widths.map(w => `${base}&w=${w} ${w}w`).join(', ');
+---
+<figure class={`photo ${cls}`}>
+  <img src={`${base}&w=1400`} srcset={srcset} sizes={sizes} alt={img.alt}
+       loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async"
+       style={`object-position:${pos}`} />
+  <span class="photo__badge">صورة توضيحية</span>
+</figure>

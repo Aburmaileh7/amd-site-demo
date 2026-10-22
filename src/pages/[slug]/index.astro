@@ -1,0 +1,92 @@
+---
+import '../../styles/global.css';
+import { normalize } from '../../lib/place.mjs';
+import Hero from '../../components/Hero.astro';
+import Story from '../../components/Story.astro';
+import Menu from '../../components/Menu.astro';
+import Proof from '../../components/Proof.astro';
+import Reviews from '../../components/Reviews.astro';
+import Amenities from '../../components/Amenities.astro';
+import Visit from '../../components/Visit.astro';
+import MapDialog from '../../components/MapDialog.astro';
+
+export function getStaticPaths() {
+  const files = import.meta.glob('../../../sites/*/place.json', { eager: true });
+  return Object.entries(files).map(([path, mod]) => {
+    const slug = path.split('/').at(-2);
+    return { params: { slug }, props: { p: normalize(mod.default ?? mod) } };
+  });
+}
+
+const { p } = Astro.props;
+const preview = !p.approved;
+const title = preview ? `تصور تجريبي — ${p.name}` : p.name;
+const SECTION = { story: Story, menu: Menu, proof: Proof, reviews: Reviews, amenities: Amenities, visit: Visit };
+const order = p.sections.filter((s) => SECTION[s]);
+const accentStyle = p.accent ? `--glow:${p.accent.hex};--glow-rgb:${p.accent.rgb};--glow-hover:${p.accent.hover || p.accent.hex};--glow-ink:${p.accent.ink || '#fff'}` : undefined;
+const themeColor = { rooftop_dark: '#0D0E11', cafe_light: '#F7F3EC', heritage_warm: '#F2E8D8', clinic_clean: '#F4F8F8' }[p.theme];
+---
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme={p.theme} style={accentStyle}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content={preview ? 'noindex, nofollow, noarchive' : 'index, follow'} />
+  <meta name="theme-color" content={themeColor} />
+  <title>{title}</title>
+  <meta name="description" content={p.hero.intro || p.hero.headline} />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <script is:inline>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+  {preview && <div class="preview-bar" role="note">{p.banner} الصور توضيحية.</div>}
+
+  <header class="site-header" data-header>
+    <div class="wrap site-header__in">
+      <a class="brand" href="#main" lang={p.name_lang || 'ar'}>{p.name}</a>
+      <nav aria-label="روابط سريعة">
+        {p.menu && <a class="nav-menu" href="#menu">{p.menu.title || 'المنيو'}</a>}
+        {p.map_query && <button type="button" class="nav-btn" data-map-open>الخريطة</button>}
+        {p.phone && <a class="header-call" href={`tel:${p.phone.tel}`}>اتصل</a>}
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <Hero p={p} />
+    {order.map((s) => { const C = SECTION[s]; return <C p={p} />; })}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__in">
+      {preview
+        ? <p>موقع تجريبي من تصميم {p.agency}، ولا يمثل الموقع الرسمي لـ <span lang={p.name_lang || 'ar'}>{p.name}</span>. البيانات من Google Maps{p.menu?.sample ? '، والمنيو نموذجي' : ''}.</p>
+        : <p>© {new Date().getFullYear()} {p.name}</p>}
+      <p class="muted">صور توضيحية من <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.</p>
+    </div>
+  </footer>
+  <MapDialog p={p} />
+
+  <script>import '../../scripts/motion.js';</script>
+</body>
+</html>
+
+<style is:global>
+  .skip { position: absolute; inset-inline-start: 16px; top: -60px; z-index: 100; background: var(--glow); color: var(--glow-ink); padding: .5rem 1rem; border-radius: 6px; }
+  .skip:focus { top: 12px; }
+  .preview-bar { position: relative; z-index: 60; background: #000; color: #EEE8DE; font-size: .8rem; line-height: 1.5; text-align: center; padding: .5rem 16px; }
+  .site-header { position: fixed; inset-inline: 0; top: 34px; z-index: 50; transition: background-color .4s, top .4s, border-color .4s; border-bottom: 1px solid transparent; }
+  .site-header.is-solid { top: 0; background: rgba(var(--bg-rgb), .92); border-color: var(--line); backdrop-filter: blur(10px); }
+  .site-header__in { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-family: var(--font-d); font-weight: 500; font-size: 1.15rem; text-decoration: none; }
+  .site-header nav { display: flex; gap: 22px; align-items: center; font-size: .95rem; }
+  .site-header nav a, .nav-btn { text-decoration: none; color: var(--muted); transition: color .3s; }
+  .site-header nav a:hover, .nav-btn:hover { color: var(--ink); }
+  .nav-btn { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+  .header-call { border: 1px solid var(--line); padding: .35rem 1rem; border-radius: 999px; color: var(--ink) !important; }
+  @media (max-width: 520px) { .site-header { top: 52px; } }
+  @media (max-width: 420px) { .nav-menu { display: none; } }
+  .site-footer { border-top: 1px solid var(--line); padding-block: 32px; font-size: .85rem; color: var(--muted); }
+  .site-footer__in { display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; }
+</style>

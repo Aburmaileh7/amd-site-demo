@@ -1,0 +1,51 @@
+---
+const { p } = Astro.props;
+const mentions = p.mentions || [];
+const show = !!p.rating || mentions.length > 0;
+const fmt = (n) => n.toLocaleString('en-US');
+---
+{show && (<section class="proof" aria-labelledby="proof-title">
+  <div class="wrap">
+    <h2 id="proof-title" class="visually-hidden">أرقام من Google Maps</h2>
+    {p.rating && <div class="stats">
+      <div class="stat" data-reveal>
+        <p class="stat__num"><span data-count={p.rating.value} data-decimals="1">{p.rating.value.toFixed(1)}</span></p>
+        <p class="muted">متوسط التقييم من 5 على {p.rating.source}</p>
+      </div>
+      <div class="stat" data-reveal>
+        <p class="stat__num"><span data-count={p.rating.count} data-decimals="0">{fmt(p.rating.count)}</span></p>
+        <p class="muted">تقييمًا كتبها الزوار</p>
+      </div>
+      {p.hours?.per_day && (
+        <div class="stat" data-reveal>
+          <p class="stat__num"><span data-count={p.hours.per_day} data-decimals="0">{p.hours.per_day}</span></p>
+          <p class="muted">ساعة مفتوحة يوميًا</p>
+        </div>
+      )}
+    </div>}
+
+    {mentions.length > 0 && (
+      <div class="mentions" data-reveal>
+        <p class="eyebrow">ورد ذكرها في مراجعات الزوار</p>
+        <ul>{mentions.map((m) => <li>{m}</li>)}</ul>
+        <p class="muted small">أصناف ذكرها زوار في مراجعاتهم على Google، وليست قائمة الطعام الرسمية.</p>
+      </div>
+    )}
+  </div>
+</section>)}
+
+<style>
+  .proof { padding-block: clamp(80px, 12vw, 150px); border-top: 1px solid var(--line); }
+  .stats { display: grid; gap: 40px; }
+  @media (min-width: 760px) { .stats { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0; }
+    .stat + .stat { border-inline-start: 1px solid var(--line); padding-inline-start: 40px; } }
+  .stat__num { font-family: var(--font-d); font-size: clamp(3.6rem, 10vw, 6.5rem); font-weight: var(--display-weight); line-height: 1; direction: ltr; text-align: right; letter-spacing: -.03em; }
+  .stat:first-child .stat__num { color: var(--glow); }
+  .mentions { margin-top: clamp(56px, 8vw, 96px); display: grid; gap: 16px; justify-items: start; }
+  .mentions ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 40px; }
+  .mentions li { font-family: var(--font-d); font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: var(--display-weight); }
+  .mentions li + li::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--glow); margin-inline-end: 40px; vertical-align: middle; transform: translateY(-4px); }
+  @media (max-width: 600px) { .mentions ul { flex-direction: column; gap: 6px; } .mentions li + li::before { display: none; } }
+  .small { font-size: .85rem; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>

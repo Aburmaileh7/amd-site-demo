@@ -1,0 +1,61 @@
+---
+import Img from './Img.astro';
+const { p } = Astro.props;
+const s = p.story;
+const horizontal = p.layout.story === 'horizontal';
+---
+{s && s.items?.length > 0 && (
+<section class={`story story--${horizontal ? 'h' : 'stack'}`} aria-labelledby="story-title">
+  <div class="wrap story__head">
+    {s.eyebrow && <p class="eyebrow" data-reveal>{s.eyebrow}</p>}
+    <h2 id="story-title" class="story__title" data-reveal>{s.title}</h2>
+  </div>
+
+  <div class="story__pin" data-story-pin={horizontal ? '' : undefined}>
+    <div class="story__track" data-story-track={horizontal ? '' : undefined}>
+      {s.items.map((d, i) => (
+        <article class="panel" data-panel data-reveal={horizontal ? undefined : ''}>
+          {d.image && p.images[d.image] && (
+            <div class="panel__media"><Img img={p.images[d.image]} sizes="(min-width: 900px) 46vw, 100vw" /></div>
+          )}
+          <div class="panel__text">
+            <p class="panel__time"><span>{String(i + 1).padStart(2, '0')}</span> · {d.label}</p>
+            <h3>{d.title}</h3>
+            <p class="muted">{d.text}</p>
+            {d.time && <p class="panel__clock">{d.time}</p>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+)}
+
+<style>
+  .story { padding-block: clamp(80px, 12vw, 140px) 0; }
+  .story__head { display: grid; gap: 10px; margin-bottom: clamp(32px, 5vw, 56px); }
+  .story__title { font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: var(--display-weight); }
+  .story__track { display: grid; gap: 56px; width: min(100% - 2 * var(--gutter), var(--maxw)); margin-inline: auto; padding-bottom: 80px; }
+  .panel { display: grid; gap: 20px; }
+  .panel__media :global(.photo) { aspect-ratio: 4 / 3; border-radius: var(--radius); }
+  .panel__text { display: grid; gap: 8px; align-content: end; }
+  .panel__time { font-size: .85rem; color: var(--glow); font-family: var(--font-ui); }
+  .panel h3 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 500; }
+  .panel__clock { font-family: var(--font-d); font-size: clamp(2.6rem, 7vw, 4.5rem); font-weight: var(--display-weight); color: rgba(var(--ink-rgb), .14); line-height: 1; margin-top: 8px; }
+
+  /* stacked: alternating rows */
+  @media (min-width: 900px) {
+    .story--stack .panel { grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+    .story--stack .panel:nth-child(even) .panel__media { order: 2; }
+    .story--stack .story__track { gap: 96px; }
+  }
+
+  /* horizontal: pinned story, enabled by JS only */
+  @media (min-width: 900px) {
+    .story--h .panel { grid-template-columns: 1.2fr 1fr; align-items: end; gap: 40px; }
+    :global(.js-motion) .story--h .story__pin { height: 100svh; overflow: hidden; display: flex; align-items: center; }
+    :global(.js-motion) .story--h .story__track { display: flex; gap: 6vw; width: max-content; margin: 0; padding: 0 var(--gutter); padding-inline-end: 10vw; will-change: transform; }
+    :global(.js-motion) .story--h .panel { width: min(78vw, 1040px); grid-template-columns: 1.25fr 1fr; }
+    :global(.js-motion) .story--h .panel__media :global(.photo) { aspect-ratio: 5 / 4; }
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+// Real reviews only (from Google Maps via Apify). With none, a clearly
+// labelled template shows where they will appear; no invented quotes.
+const { p } = Astro.props;
+const reviews = (p.reviews || []).filter((r) => r && r.text);
+const fmt = (n) => n.toLocaleString('en-US');
+const stars = (n) => Array.from({ length: 5 }, (_, i) => i < Math.round(n));
+---
+{reviews.length > 0 && (
+<section class="rev" aria-labelledby="rev-title">
+  <div class="wrap rev__head">
+    <div>
+      <p class="eyebrow" data-reveal>من مراجعات {p.rating.source}</p>
+      <h2 id="rev-title" class="rev__title" data-reveal>ماذا يقول الزوار</h2>
+    </div>
+  </div>
+
+
+    <div class="rev__rail" data-rail tabindex="0" aria-label="مراجعات الزوار، مرّر أفقيًا">
+      {reviews.map((r) => (
+        <figure class="card" data-card>
+          <div class="card__stars" aria-label={`${r.stars} من 5`}>
+            {stars(r.stars || 5).map((on) => <span class={on ? 'on' : ''} aria-hidden="true"></span>)}
+          </div>
+          <blockquote>{r.text}</blockquote>
+          <figcaption><strong>{r.author}</strong>{r.when && <span class="muted"> · {r.when}</span>}</figcaption>
+        </figure>
+      ))}
+    </div>
+</section>
+)}
+
+<style>
+  .rev { padding-block: clamp(90px, 13vw, 150px); border-top: 1px solid var(--line); overflow: hidden; }
+  .rev__head { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: end; margin-bottom: 40px; }
+  .rev__title { font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: var(--display-weight); }
+  .rev__score { display: flex; gap: 14px; align-items: center; line-height: 1.5; font-size: .9rem; }
+  .rev__num { font-family: var(--font-d); font-size: clamp(3rem, 8vw, 4.5rem); font-weight: var(--display-weight); color: var(--glow); line-height: 1; }
+
+  .rev__rail { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px var(--gutter) 24px; scrollbar-width: thin; cursor: grab; }
+  .rev__rail:active { cursor: grabbing; }
+  .card { flex: none; width: min(84vw, 400px); scroll-snap-align: start; margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px; display: grid; gap: 16px; align-content: start; }
+  .card blockquote { margin: 0; font-size: 1.05rem; line-height: 1.9; }
+  .card blockquote::before { content: "”"; display: block; font-family: var(--font-d); font-size: 3rem; line-height: .6; color: var(--glow); margin-bottom: 6px; }
+  .card__stars { display: flex; gap: 4px; }
+  .card__stars span { width: 13px; height: 13px; background: rgba(var(--ink-rgb), .2); clip-path: polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+  .card__stars span.on { background: var(--glow); }
+
+  .rev__template { display: grid; gap: 16px; }
+  @media (min-width: 800px) { .rev__template { grid-template-columns: repeat(3, 1fr); } }
+  .card--ghost { width: auto; border-style: dashed; opacity: .7; }
+  .bar { display: block; height: 10px; border-radius: 6px; background: rgba(var(--ink-rgb), .09); }
+  .bar.short { width: 55%; }
+  .rev__note { margin-top: 18px; font-size: .9rem; }
+</style>

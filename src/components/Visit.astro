@@ -1,0 +1,65 @@
+---
+import Img from './Img.astro';
+const { p } = Astro.props;
+const img = p.visit?.image ? p.images[p.visit.image] : null;
+---
+<section class={`visit ${img ? '' : 'visit--plain'}`} id="visit" aria-labelledby="visit-title">
+  {img && (
+    <>
+      <div class="visit__bg" data-parallax="12" aria-hidden="true"><Img img={img} sizes="100vw" pos="50% 40%" /></div>
+      <div class="visit__shade" aria-hidden="true"></div>
+    </>
+  )}
+
+  <div class="wrap visit__inner">
+    <p class="eyebrow" data-reveal>زيارتنا</p>
+    <h2 id="visit-title" class="visit__title"><span data-line><span>{p.address}</span></span></h2>
+
+    <div class="visit__cols">
+      {p.hours?.rows?.length > 0 && (
+        <div data-reveal>
+          <p class="label">ساعات العمل</p>
+          <dl class="hours">
+            {p.hours.rows.map((r) => <div><dt>{r.days}</dt><dd>{r.time}</dd></div>)}
+          </dl>
+          {p.hours.source && <p class="muted small">حسب {p.hours.source}</p>}
+        </div>
+      )}
+      <div data-reveal class="contact">
+        {p.phone && (<><p class="label">الهاتف</p><a class="big ltr phone" href={`tel:${p.phone.tel}`}>{p.phone.display}</a></>)}
+        {p.whatsapp && (<a class="wa" href={`https://wa.me/${p.whatsapp.number}`} target="_blank" rel="noopener">واتساب · <span class="ltr">{p.whatsapp.display}</span></a>)}
+      </div>
+      <div data-reveal class="visit__cta">
+        <button class="btn btn--glow" type="button" data-map-open>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+          عرض الخريطة
+        </button>
+        {p.directions_url && <a class="btn btn--ghost" href={p.directions_url} target="_blank" rel="noopener">الاتجاهات</a>}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .visit { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(110px, 16vw, 200px); }
+  .visit__bg { position: absolute; inset: -12% 0; z-index: -2; }
+  .visit__bg :global(.photo) { height: 100%; }
+  .visit__bg :global(.photo__badge) { bottom: auto; top: calc(12% + 16px); }
+  .visit__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--bg) 0%, rgba(var(--bg-rgb), .78) 30%, rgba(var(--bg-rgb), .86) 70%, var(--bg) 100%); }
+  .visit__inner { display: grid; gap: 18px; }
+  .visit__title { font-size: clamp(2.6rem, 9vw, 6.5rem); font-weight: var(--display-weight); letter-spacing: -.02em; }
+  .visit__cols { display: grid; gap: 32px; margin-top: 32px; }
+  @media (min-width: 860px) { .visit__cols { grid-template-columns: 1fr 1fr auto; align-items: end; } }
+  .label { font-size: .8rem; letter-spacing: .08em; color: var(--muted); font-family: var(--font-ui); }
+  .big { font-family: var(--font-ui); font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 500; text-decoration: none; display: inline-block; }
+  .phone:hover { color: var(--glow); }
+  .small { font-size: .82rem; }
+  .visit__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .visit--plain { background: var(--surface); }
+  .hours { margin: 6px 0 0; min-width: min(100%, 320px); }
+  .hours div { display: flex; justify-content: space-between; gap: 24px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .hours dt { color: var(--muted); } .hours dd { margin: 0; font-family: var(--font-ui); }
+  .contact { display: grid; gap: 6px; align-content: end; }
+  .wa { color: var(--glow); font-weight: 500; text-decoration: none; }
+  button.btn { border: 0; cursor: pointer; }
+</style>

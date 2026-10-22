@@ -1,0 +1,308 @@
+{
+  "place_id": "ChIJCfKapt1nGxUR__vu4pjEqlI",
+  "slug": "san-rooftop",
+  "theme": "rooftop_dark",
+  "approved": false,
+  "agency": "Amad Web",
+  "name": "San Rooftop",
+  "name_lang": "en",
+  "category_label": "مطعم وكافيه على السطح",
+  "area": "دوار خلدا، عمّان",
+  "address": "دوار خلدا، عمّان",
+  "phone": {
+    "display": "+962 7 7814 5589",
+    "tel": "+962778145589"
+  },
+  "whatsapp": null,
+  "directions_url": "https://www.google.com/maps/search/?api=1&query=San%20Rooftop&query_place_id=ChIJCfKapt1nGxUR__vu4pjEqlI",
+  "map_query": "San Rooftop, Khalda, Amman, Jordan",
+  "rating": {
+    "value": 4.8,
+    "count": 5830,
+    "source": "Google"
+  },
+  "hours": {
+    "rows": [
+      {
+        "days": "يوميًا",
+        "time": "9 ص – 12 ص"
+      }
+    ],
+    "per_day": 15,
+    "source": "Google Maps"
+  },
+  "hero": {
+    "headline": "جلسات على السطح، من الفطور حتى منتصف الليل",
+    "intro": "مطعم وكافيه فوق دوار خلدا، بجلسات داخلية وأخرى في الهواء الطلق، يقدّم الفطور والغداء والعشاء طوال أيام الأسبوع.",
+    "image": "hero"
+  },
+  "sections": [
+    "story",
+    "menu",
+    "proof",
+    "reviews",
+    "amenities",
+    "visit"
+  ],
+  "story": {
+    "eyebrow": "من التاسعة صباحًا حتى منتصف الليل",
+    "title": "يومك على السطح",
+    "items": [
+      {
+        "time": "9:00 ص",
+        "label": "صباحًا",
+        "title": "الفطور",
+        "text": "يفتح السطح أبوابه في التاسعة صباحًا، والفطور العربي من أكثر ما يرد في مراجعات الزوار.",
+        "image": "breakfast"
+      },
+      {
+        "time": "ظهرًا",
+        "label": "منتصف اليوم",
+        "title": "الغداء",
+        "text": "وجبات الغداء تُقدَّم في الجلسات الداخلية أو على السطح.",
+        "image": "lunch"
+      },
+      {
+        "time": "12:00 ص",
+        "label": "مساءً",
+        "title": "العشاء والسهرة",
+        "text": "العشاء والجلسات المسائية مستمرة حتى منتصف الليل.",
+        "image": "night"
+      }
+    ]
+  },
+  "menu": {
+    "note": "منيو نموذجي لعرض الشكل فقط. الأصناف والأسعار ليست من المطعم، وتُستبدل بالمنيو الحقيقي بعد الموافقة.",
+    "currency": "د.أ",
+    "categories": [
+      {
+        "id": "breakfast",
+        "title": "الفطور",
+        "tagline": "من التاسعة صباحًا",
+        "image": "breakfast",
+        "items": [
+          {
+            "name": "إفطار عربي (طبلية)",
+            "desc": "حمص، فول، فلافل، لبنة، زيتون، بيض، وخبز طابون. لشخصين.",
+            "price": 14.0,
+            "mentioned": true
+          },
+          {
+            "name": "شكشوكة",
+            "desc": "بيض مع صلصة البندورة والفلفل.",
+            "price": 4.5
+          },
+          {
+            "name": "فتة حمص",
+            "desc": "حمص بالطحينة على خبز محمص وصنوبر.",
+            "price": 4.0
+          },
+          {
+            "name": "منقوشة زعتر",
+            "desc": "بزيت الزيتون، من الفرن.",
+            "price": 2.0
+          },
+          {
+            "name": "جبنة حلوم مشوية",
+            "desc": "مع بندورة وخيار ونعنع.",
+            "price": 3.75
+          }
+        ]
+      },
+      {
+        "id": "grill",
+        "title": "المشاوي والأطباق",
+        "tagline": "للغداء والعشاء",
+        "image": "lunch",
+        "items": [
+          {
+            "name": "مشاوي مشكّلة",
+            "desc": "كباب، شيش طاووق، وريش. مع خبز وصلطات.",
+            "price": 12.0
+          },
+          {
+            "name": "شيش طاووق",
+            "desc": "صدر دجاج متبّل مع ثومية وبطاطا.",
+            "price": 7.5
+          },
+          {
+            "name": "كباب حلبي",
+            "desc": "لحم مفروم بالبهارات على الفحم.",
+            "price": 8.0
+          },
+          {
+            "name": "برغر السطح",
+            "desc": "لحم بقري، جبنة، وصلصة البيت.",
+            "price": 7.0
+          }
+        ]
+      },
+      {
+        "id": "drinks",
+        "title": "المشروبات",
+        "tagline": "ساخنة وباردة",
+        "image": "drinks",
+        "items": [
+          {
+            "name": "قهوة عربية",
+            "desc": "بالهيل، تُقدَّم بالدلة.",
+            "price": 2.0
+          },
+          {
+            "name": "سبانش لاتيه",
+            "desc": "إسبريسو مع حليب مكثف.",
+            "price": 3.25
+          },
+          {
+            "name": "شاي بالنعناع",
+            "desc": "إبريق لشخصين.",
+            "price": 2.5
+          },
+          {
+            "name": "ليمون بالنعناع",
+            "desc": "عصير طازج مثلج.",
+            "price": 3.0
+          }
+        ]
+      },
+      {
+        "id": "desserts",
+        "title": "الحلويات",
+        "tagline": "مع القهوة",
+        "image": "desserts",
+        "items": [
+          {
+            "name": "كنافة نابلسية",
+            "desc": "بالجبنة، ساخنة.",
+            "price": 3.5
+          },
+          {
+            "name": "حلويات بالفستق",
+            "desc": "تشكيلة صغيرة.",
+            "price": 3.0
+          },
+          {
+            "name": "تشيز كيك",
+            "desc": "بصلصة التوت.",
+            "price": 4.0
+          }
+        ]
+      },
+      {
+        "id": "shisha",
+        "title": "الأرجيلة",
+        "tagline": "على السطح مساءً",
+        "image": "night",
+        "items": [
+          {
+            "name": "أرجيلة تفاحتين",
+            "desc": "",
+            "price": 6.0,
+            "mentioned": true
+          },
+          {
+            "name": "أرجيلة ليمون ونعنع",
+            "desc": "",
+            "price": 6.0
+          },
+          {
+            "name": "أرجيلة عنب ونعنع",
+            "desc": "",
+            "price": 6.0
+          }
+        ]
+      }
+    ],
+    "sample": true,
+    "title": "المنيو",
+    "eyebrow": "من الفطور حتى السهرة",
+    "foot": "للطلبات الخارجية والحجز"
+  },
+  "mentions": [
+    "إفطار عربي (طبلية)",
+    "أرجيلة"
+  ],
+  "reviews": [],
+  "amenities": {
+    "eyebrow": "قبل أن تزورنا",
+    "title": "ما ستجده على السطح",
+    "image": "dusk",
+    "items": [
+      {
+        "icon": "sky",
+        "title": "جلسات على السطح",
+        "text": "جلسات خارجية في الهواء الطلق، وأخرى داخلية."
+      },
+      {
+        "icon": "calendar",
+        "title": "حجز طاولات",
+        "text": "يقبل المكان الحجوزات المسبقة."
+      },
+      {
+        "icon": "bag",
+        "title": "طلبات خارجية وتوصيل",
+        "text": "طلبات للاستلام، وخدمة توصيل."
+      },
+      {
+        "icon": "car",
+        "title": "مواقف وخدمة صف السيارات",
+        "text": "مواقف للسيارات مع خدمة صف السيارات."
+      },
+      {
+        "icon": "access",
+        "title": "مهيأ للكراسي المتحركة",
+        "text": "مدخل ومواقف ودورات مياه مهيأة."
+      }
+    ]
+  },
+  "visit": {
+    "image": "city"
+  },
+  "images": {
+    "hero": {
+      "id": "photo-1786374785195-2267ddab1bec",
+      "alt": "صورة توضيحية: طاولة وكراسٍ على سطح يطل على مدينة",
+      "page": "https://unsplash.com/photos/rooftop-terrace-with-metal-furniture-qGrzFLsq_DM"
+    },
+    "breakfast": {
+      "id": "photo-1704742205592-15191a615455",
+      "alt": "صورة توضيحية: طاولة عليها صحون فطور ومشروبات",
+      "page": "https://unsplash.com/photos/a-table-topped-with-plates-of-food-and-drinks-ssMrF3Yn6II"
+    },
+    "lunch": {
+      "id": "photo-1777716003985-68fed08d0c7e",
+      "alt": "صورة توضيحية: طبق مشاوي مع أرز وخبز",
+      "page": "https://unsplash.com/photos/a-platter-of-grilled-meats-with-rice-and-pita-bread-2j17J8psiTw"
+    },
+    "night": {
+      "id": "photo-1775340965364-64be29c25f1c",
+      "alt": "صورة توضيحية: طاولة مطعم مضاءة بشمعة في المساء",
+      "page": "https://unsplash.com/photos/a-dimly-lit-restaurant-table-with-a-single-candle-9jNYTFpa2gs"
+    },
+    "dusk": {
+      "id": "photo-1760454477181-4d2d1f7e30ce",
+      "alt": "صورة توضيحية: جلسات على سطح وقت الغروب",
+      "page": "https://unsplash.com/photos/two-people-sit-at-tables-on-a-rooftop-at-sunset-ftQxXRLVwXw"
+    },
+    "coffee": {
+      "id": "photo-1625021659159-f63f546d74a7",
+      "alt": "صورة توضيحية: كوب قهوة على طاولة خشبية",
+      "page": "https://unsplash.com/photos/white-ceramic-mug-on-brown-wooden-table-S8daAB_nJSg"
+    },
+    "city": {
+      "id": "photo-1572279815221-92b091e941c2",
+      "alt": "صورة توضيحية: غروب الشمس فوق شارع في مدينة",
+      "page": "https://unsplash.com/photos/the-sun-is-setting-over-a-city-street-3FeDWYfZYxY"
+    },
+    "drinks": {
+      "id": "photo-1774791500971-ddaafd214520",
+      "alt": "صورة توضيحية: دلة قهوة عربية وتمر",
+      "page": "https://unsplash.com/photos/dates-in-a-woven-basket-with-arabic-coffee-pot-URncnSvN6Kw"
+    },
+    "desserts": {
+      "id": "photo-1778447812923-88a9e3e6b567",
+      "alt": "صورة توضيحية: حلوى بالفستق الحلبي",
+      "page": "https://unsplash.com/photos/a-delicate-pastry-filled-with-chopped-pistachios-NzNFM69MMnI"
+    }
+  }
+}

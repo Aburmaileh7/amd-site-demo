@@ -1,0 +1,241 @@
+{
+  "place_id": "ChIJhT2FwcKhHBUR__3oahv9rpo",
+  "slug": "cielo-cafe",
+  "theme": "cafe_light",
+  "approved": false,
+  "agency": "Amad Web",
+  "layout": {
+    "hero": "full"
+  },
+  "accent": {
+    "hex": "#2C6A93",
+    "rgb": "44, 106, 147",
+    "hover": "#235777",
+    "ink": "#FFFFFF"
+  },
+  "name": "CIELO CAFE",
+  "name_lang": "en",
+  "category_label": "كافيه بجلسات خارجية",
+  "area": "تلاع العلي، عمّان",
+  "address": "شارع وصفي التل، تلاع العلي، عمّان",
+  "phone": {
+    "display": "+962 7 9055 2551",
+    "tel": "+962790552551"
+  },
+  "whatsapp": null,
+  "directions_url": "https://www.google.com/maps/search/?api=1&query=CIELO%20CAFE&query_place_id=ChIJhT2FwcKhHBUR__3oahv9rpo",
+  "map_query": "CIELO CAFE, Wasfi Al Tal St, Amman, Jordan",
+  "rating": {
+    "value": 4.3,
+    "count": 744,
+    "source": "Google"
+  },
+  "hours": {
+    "rows": [
+      {
+        "days": "السبت – الخميس",
+        "time": "8 ص – 12 ص"
+      },
+      {
+        "days": "الجمعة",
+        "time": "2 م – 12 ص"
+      }
+    ],
+    "per_day": null,
+    "source": "Google Maps"
+  },
+  "hero": {
+    "headline": "قهوة وجلسات في الهواء الطلق على شارع وصفي التل",
+    "intro": "كافيه في تلاع العلي بجلسات داخلية وخارجية، يقدّم القهوة والمشروبات والأرجيلة، ويفتح من الثامنة صباحًا حتى منتصف الليل.",
+    "image": "hero"
+  },
+  "sections": [
+    "menu",
+    "proof",
+    "amenities",
+    "visit"
+  ],
+  "story": null,
+  "menu": {
+    "kind": "menu",
+    "sample": true,
+    "title": "المنيو",
+    "eyebrow": "من الصباح حتى منتصف الليل",
+    "note": "منيو نموذجي لعرض الشكل فقط. الأصناف والأسعار ليست من المحل، وتُستبدل بالمنيو الحقيقي بعد الموافقة.",
+    "currency": "د.أ",
+    "foot": "للاستفسار والحجز",
+    "categories": [
+      {
+        "id": "hot",
+        "title": "مشروبات ساخنة",
+        "tagline": "قهوة وشاي",
+        "image": "hot",
+        "items": [
+          {
+            "name": "إسبريسو",
+            "desc": "",
+            "price": 2.0
+          },
+          {
+            "name": "كابتشينو",
+            "desc": "",
+            "price": 2.75
+          },
+          {
+            "name": "سبانش لاتيه",
+            "desc": "إسبريسو مع حليب مكثف.",
+            "price": 3.25
+          },
+          {
+            "name": "شاي بالنعناع",
+            "desc": "إبريق.",
+            "price": 2.0
+          }
+        ]
+      },
+      {
+        "id": "cold",
+        "title": "مشروبات باردة",
+        "tagline": "للجلسات الخارجية",
+        "image": "cold",
+        "items": [
+          {
+            "name": "آيس لاتيه",
+            "desc": "",
+            "price": 3.25
+          },
+          {
+            "name": "آيس ماتشا لاتيه",
+            "desc": "",
+            "price": 3.75
+          },
+          {
+            "name": "ليمون بالنعناع",
+            "desc": "عصير طازج.",
+            "price": 2.75
+          },
+          {
+            "name": "موكا مثلجة",
+            "desc": "",
+            "price": 3.5
+          }
+        ]
+      },
+      {
+        "id": "bites",
+        "title": "فطور ووجبات خفيفة",
+        "tagline": "مع قهوة الصباح",
+        "image": "bites",
+        "items": [
+          {
+            "name": "كرواسون",
+            "desc": "سادة أو بالزعتر.",
+            "price": 2.0
+          },
+          {
+            "name": "ساندويش حلوم",
+            "desc": "",
+            "price": 3.5
+          },
+          {
+            "name": "صحن فطور",
+            "desc": "بيض، لبنة، زيتون، وخبز.",
+            "price": 5.5
+          }
+        ]
+      },
+      {
+        "id": "shisha",
+        "title": "الأرجيلة",
+        "tagline": "على الجلسات الخارجية",
+        "image": "shisha",
+        "items": [
+          {
+            "name": "أرجيلة تفاحتين",
+            "desc": "",
+            "price": 5.0
+          },
+          {
+            "name": "أرجيلة ليمون ونعنع",
+            "desc": "",
+            "price": 5.0
+          },
+          {
+            "name": "أرجيلة عنب ونعنع",
+            "desc": "",
+            "price": 5.0
+          }
+        ]
+      }
+    ]
+  },
+  "mentions": [],
+  "reviews": [],
+  "amenities": {
+    "eyebrow": "قبل أن تزورنا",
+    "title": "ما يوفره المكان",
+    "image": "work",
+    "items": [
+      {
+        "icon": "tree",
+        "title": "جلسات خارجية",
+        "text": "جلوس في الهواء الطلق، إلى جانب صالة داخلية."
+      },
+      {
+        "icon": "wifi",
+        "title": "إنترنت لاسلكي",
+        "text": "مناسب للقراءة والعمل."
+      },
+      {
+        "icon": "car",
+        "title": "مواقف مجانية",
+        "text": "مواقف سيارات للزوار."
+      },
+      {
+        "icon": "access",
+        "title": "مهيأ للكراسي المتحركة",
+        "text": "مدخل مهيأ."
+      }
+    ]
+  },
+  "visit": {
+    "image": "exterior"
+  },
+  "images": {
+    "hero": {
+      "id": "photo-1783272547883-353cfdb9e71b",
+      "alt": "صورة توضيحية: جلسات كافيه خارجية تحت الأشجار",
+      "page": "https://unsplash.com/photos/people-enjoying-an-outdoor-cafe-patio-under-trees-GVJWydhKqbw"
+    },
+    "hot": {
+      "id": "photo-1690983326252-ce6205fb7055",
+      "alt": "صورة توضيحية: كوب قهوة بين حبوب البن",
+      "page": "https://unsplash.com/photos/a-cup-of-coffee-surrounded-by-coffee-beans-KU7PjmjArlQ"
+    },
+    "cold": {
+      "id": "photo-1717603545758-88cc454db69b",
+      "alt": "صورة توضيحية: آيس ماتشا لاتيه على طاولة خشبية",
+      "page": "https://unsplash.com/photos/iced-matcha-latte-on-wooden-table-N1rmKN_EOaA"
+    },
+    "bites": {
+      "id": "photo-1704742205592-15191a615455",
+      "alt": "صورة توضيحية: طاولة عليها صحون فطور ومشروبات",
+      "page": "https://unsplash.com/photos/a-table-topped-with-plates-of-food-and-drinks-ssMrF3Yn6II"
+    },
+    "shisha": {
+      "id": "photo-1574238752695-675b86d49267",
+      "alt": "صورة توضيحية: أرجيلة",
+      "page": "https://unsplash.com/photos/gray-hookah-OUGqm1DjYIc"
+    },
+    "work": {
+      "id": "photo-1743389412243-7dbfdf6c48dd",
+      "alt": "صورة توضيحية: عمل على لابتوب بجانب قهوة",
+      "page": "https://unsplash.com/photos/working-on-a-laptop-with-a-coffee-nearby-ro-7djAkodU"
+    },
+    "exterior": {
+      "id": "photo-1779442563698-11fad08a733e",
+      "alt": "صورة توضيحية: واجهة كافيه بجلسات خارجية ومظلات",
+      "page": "https://unsplash.com/photos/cafe-exterior-with-outdoor-seating-and-beige-umbrellas-1jIs3w-Ahwg"
+    }
+  }
+}

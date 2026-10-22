@@ -1,0 +1,122 @@
+@import '@fontsource/alexandria/arabic-300.css';
+@import '@fontsource/alexandria/arabic-500.css';
+@import '@fontsource/alexandria/latin-300.css';
+@import '@fontsource/alexandria/latin-500.css';
+@import '@fontsource/ibm-plex-sans-arabic/arabic-400.css';
+@import '@fontsource/ibm-plex-sans-arabic/arabic-500.css';
+@import '@fontsource/ibm-plex-sans-arabic/arabic-700.css';
+@import '@fontsource/ibm-plex-sans-arabic/latin-400.css';
+@import '@fontsource/ibm-plex-sans-arabic/latin-500.css';
+@import '@fontsource/readex-pro/arabic-300.css';
+@import '@fontsource/readex-pro/arabic-500.css';
+@import '@fontsource/readex-pro/latin-300.css';
+@import '@fontsource/readex-pro/latin-500.css';
+@import '@fontsource/reem-kufi/arabic-500.css';
+@import '@fontsource/reem-kufi/arabic-700.css';
+@import '@fontsource/reem-kufi/latin-500.css';
+@import '@fontsource/noto-naskh-arabic/arabic-400.css';
+@import '@fontsource/noto-naskh-arabic/arabic-600.css';
+
+/* ---------- themes: tokens only; layout variants are chosen in components ---------- */
+:root, [data-theme="rooftop_dark"] {
+  --bg: #0D0E11; --bg-rgb: 13, 14, 17;
+  --surface: #15171C; --surface-2: #1C1F25;
+  --ink: #EEE8DE; --ink-rgb: 238, 232, 222;
+  --muted: #A29C92;
+  --line: rgba(238, 232, 222, .12);
+  --glow: #E9A55B; --glow-rgb: 233, 165, 91; --glow-ink: #1A1206; --glow-hover: #F2B470;
+  --font-d: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-b: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-ui: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --display-weight: 300; --radius: 6px;
+  color-scheme: dark;
+}
+[data-theme="cafe_light"] {
+  --bg: #F7F3EC; --bg-rgb: 247, 243, 236;
+  --surface: #EFE8DD; --surface-2: #E5DCCD;
+  --ink: #23201B; --ink-rgb: 35, 32, 27;
+  --muted: #6C6458;
+  --line: rgba(35, 32, 27, .12);
+  --glow: #3E6A50; --glow-rgb: 62, 106, 80; --glow-ink: #FFFFFF; --glow-hover: #335A43;
+  --font-d: "Readex Pro", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-b: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-ui: "Readex Pro", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --display-weight: 300; --radius: 18px;
+  color-scheme: light;
+}
+[data-theme="heritage_warm"] {
+  --bg: #F2E8D8; --bg-rgb: 242, 232, 216;
+  --surface: #E9DCC4; --surface-2: #DECDAF;
+  --ink: #2B1D12; --ink-rgb: 43, 29, 18;
+  --muted: #6B5641;
+  --line: rgba(43, 29, 18, .15);
+  --glow: #9A3B1C; --glow-rgb: 154, 59, 28; --glow-ink: #FFF6EC; --glow-hover: #822F14;
+  --font-d: "Reem Kufi", "Noto Naskh Arabic", serif;
+  --font-b: "Noto Naskh Arabic", "IBM Plex Sans Arabic", serif;
+  --font-ui: "Noto Naskh Arabic", serif;
+  --display-weight: 500; --radius: 2px;
+  color-scheme: light;
+}
+[data-theme="clinic_clean"] {
+  --bg: #F4F8F8; --bg-rgb: 244, 248, 248;
+  --surface: #FFFFFF; --surface-2: #E6EEEE;
+  --ink: #102A2D; --ink-rgb: 16, 42, 45;
+  --muted: #4E6B6B;
+  --line: rgba(16, 42, 45, .12);
+  --glow: #0E7C76; --glow-rgb: 14, 124, 118; --glow-ink: #FFFFFF; --glow-hover: #0B6762;
+  --font-d: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-b: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-ui: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --display-weight: 500; --radius: 10px;
+  color-scheme: light;
+}
+:root { --maxw: 1200px; --gutter: clamp(16px, 4vw, 40px); --ease: cubic-bezier(.2, .7, .1, 1); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-b); font-size: 1.0625rem; line-height: 1.8;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2 { font-family: var(--font-d); }
+h3 { font-family: var(--font-ui); font-weight: 600; }
+h1, h2, h3 { margin: 0; line-height: 1.2; font-weight: 500; text-wrap: balance; }
+.hero__headline { text-wrap: balance; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--glow); outline-offset: 4px; border-radius: 4px; }
+
+.wrap { width: min(100% - 2 * var(--gutter), var(--maxw)); margin-inline: auto; }
+.eyebrow { font-family: var(--font-ui); font-size: .82rem; letter-spacing: .08em; color: var(--glow); font-weight: 500; }
+.muted { color: var(--muted); }
+.ltr { direction: ltr; unicode-bidi: isolate; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .6rem; min-height: 52px; padding: .8rem 1.6rem;
+  border-radius: 999px; font-family: var(--font-ui); font-weight: 500; font-size: 1rem; text-decoration: none;
+  transition: transform .35s var(--ease), background-color .3s, color .3s, border-color .3s;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn--glow { background: var(--glow); color: var(--glow-ink); }
+.btn--glow:hover { transform: translateY(-2px); background: var(--glow-hover); }
+.btn--ghost { border: 1px solid rgba(var(--ink-rgb), .35); color: var(--ink); }
+.btn--ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+.photo { position: relative; overflow: hidden; background: var(--surface-2); margin: 0; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo__badge {
+  position: absolute; inset-inline-start: 12px; bottom: 12px; z-index: 2;
+  font-size: .72rem; line-height: 1.4; padding: .25rem .6rem; border-radius: 4px;
+  background: rgba(10, 10, 12, .7); color: #fff; backdrop-filter: none;
+}
+
+/* reveal primitives (GSAP sets the motion; without JS everything is visible) */
+.js [data-reveal], .js [data-hero-in] { opacity: 0; transform: translateY(28px); }
+.js [data-line] { display: block; overflow: hidden; padding-bottom: .16em; margin-bottom: -.16em; }
+.js [data-line] > span { display: block; transform: translateY(105%); }
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal], .js [data-hero-in] { opacity: 1; transform: none; }
+  .js [data-line] > span { transform: none; }
+}
